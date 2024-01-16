@@ -17,14 +17,18 @@ const guests = [
   'Maneskin'
 ];
 
-// - 1
-const guestList = guests.map((g, i) => {
+//* - 1 Creo un nuovo Array inserendo i dati aggiuntivi tramite il metodo ".map"
+const guestList = guests.map((guest, i) => {
     return {
         tableName: 'Tavolo Vip',
-        name: g,
+        name: guest,
         place: i++
     }
 });
 
 console.log(guestList)
+
+
+
+
 
