@@ -18,13 +18,7 @@ const guests = [
 ];
 
 //* - 1 Creo un nuovo Array inserendo i dati aggiuntivi tramite il metodo ".map"
-const guestList = guests.map((guest, i) => {
-    return {
-        tableName: 'Tavolo Vip',
-        name: guest,
-        place: i++
-    }
-});
+const guestList = guests.map((name, i) => ({ tableName, name, place: i + 1 }));
 
 console.log(guestList)
 
@@ -86,6 +80,33 @@ const studentsList = students.map(({name})  => name.toUpperCase());
 
 console.log('I nomi degli studenti sono: ',studentsList)
 
+//# Esercizio 3
 
+const cycles = [
+    { name: 'Bianchi', weight: 10.5 },
+    { name: 'Look', weight: 8.2 },
+    { name: 'Willier Triestina', weight: 7.2 },
+    { name: 'Pinarello', weight: 9.0 },
+    { name: 'Colnago', weight: 12.1 },
+    { name: 'Cervelo S5', weight: 10.5 },
+    { name: 'Canyon', weight: 6.0 },
+    { name: 'Specialized', weight: 5.0 },
+  ];
+
+  // - 1 Inizializzo una variabile alla bici con il peso minore stabilendo che si troverà all'inizio dell'Erray
+  let lighterCycle = cycles[0];
+
+  // - 2 Utilizzo un ciclo forEach per controllare i valori di ogni elemento dell'Erray
+  cycles.forEach((cycle, i) => {
+
+    // - 3 Verifico tramite una condizionale che l'index sia diverso da 0 e che il peso di ogni bicicletta 
+    // sia minore del peso della bicicletta che si trova all'inizio dell'Erray
+    if (i !== 0 && cycle.weight < lighterCycle.weight) {
+        lighterCycle = cycle;
+    }
+  });
+  
+  // - 4 Stampo in console il risultato
+  console.log(`La bici con il peso minore è ${lighterCycle.name} con un peso di ${lighterCycle.weight} kg.`);
 
 
