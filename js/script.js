@@ -93,20 +93,20 @@ const cycles = [
     { name: 'Specialized', weight: 5.0 },
   ];
 
-  // - 1 Inizializzo una variabile alla bici con il peso minore stabilendo che si troverà all'inizio dell'Erray
+  //* - 1 Inizializzo una variabile alla bici con il peso minore stabilendo che si troverà all'inizio dell'Erray.
   let lighterCycle = cycles[0];
 
-  // - 2 Utilizzo un ciclo forEach per controllare i valori di ogni elemento dell'Erray
+  //* - 2 Utilizzo un ciclo forEach per controllare i valori di ogni elemento dell'Erray.
   cycles.forEach((cycle, i) => {
 
-    // - 3 Verifico tramite una condizionale che l'index sia diverso da 0 e che il peso di ogni bicicletta 
-    // sia minore del peso della bicicletta che si trova all'inizio dell'Erray
+    //* - 3 Verifico tramite una condizionale che l'index sia diverso da 0 e che il peso di ogni bicicletta 
+    //* sia minore del peso della bicicletta che si trova all'inizio dell'Erray.
     if (i !== 0 && cycle.weight < lighterCycle.weight) {
         lighterCycle = cycle;
     }
   });
   
-  // - 4 Stampo in console il risultato
+  //* - 4 Stampo in console il risultato.
   console.log(`La bici con il peso minore è ${lighterCycle.name} con un peso di ${lighterCycle.weight} kg.`);
 
 
