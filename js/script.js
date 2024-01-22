@@ -109,4 +109,56 @@ const cycles = [
   //* - 4 Stampo in console il risultato.
   console.log(`La bici con il peso minore è ${lighterCycle.name} con un peso di ${lighterCycle.weight} kg.`);
 
+//# Esercizio 4
 
+//* - 1 Costruisco l'Array di partenza con i nomi delle squadre.
+const teams = [
+    {   name: "Juventus",
+        points: 0,
+        fouls: 0 
+    },
+    { 
+        name: "Milan", 
+        points: 0, 
+        fouls: 0 
+    },
+    { 
+        name: "Inter", 
+        points: 0, 
+        fouls: 0 
+    },
+    { 
+        name: "Roma", 
+        points: 0, 
+        fouls: 0 
+    },
+    { 
+        name: "Napoli", 
+        points: 0, 
+        fouls: 0 
+    },
+    { 
+        name: "Lazio", 
+        points: 0, 
+        fouls: 0 
+    },
+  ];
+
+//* - 2 Genero la funzione del numero casuale.
+  const getRandomNumber = (min,max) => Math.floor(Math.random() * (max-min + 1) + min);
+  
+  //* - 3 Riassegno i valori sia ai punti che ai falli di ogni squadra con un ciclo forEach tramite la funzione dei numeri random.
+  teams.forEach(team => {
+    team.points = getRandomNumber(0,100);
+    team.fouls = getRandomNumber(0,100);
+  });
+
+console.log(teams)
+
+//* - 4 Costruisco un nuovo array con i nomi delle squadre e i falli subiti, tramite il destructuring, stampandolo in console.
+const newTeams = teams.map((team) => {
+    const { name, fouls } = team;
+    return { name, fouls };
+})
+
+console.log(newTeams)
